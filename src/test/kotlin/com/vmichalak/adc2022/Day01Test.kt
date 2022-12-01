@@ -5,27 +5,55 @@ import java.io.File
 import kotlin.test.Test
 
 class Day01Test {
-    val input = File(this.javaClass.getResource("/day01.txt")!!.toURI()).readLines()
+    val input = File(this.javaClass.getResource("/day01.in")!!.toURI()).readText()
 
     @Test
-    fun `Part1 Exemple`() {
-        Assertions.assertEquals(7, Day01.part1(listOf(199, 200, 208, 210, 200, 207, 240, 269, 260, 263)))
+    fun `Part1 Example`() {
+        Assertions.assertEquals(24000, Day01.part1("""
+            1000
+            2000
+            3000
+            
+            4000
+            
+            5000
+            6000
+            
+            7000
+            8000
+            9000
+            
+            10000
+        """.trimIndent()))
     }
 
     @Test
     fun `Part1 Solution`() {
-        val i = input.map { it.toInt() }
-        println(Day01.part1(i))
+        Assertions.assertEquals(71924, Day01.part1(input))
     }
 
     @Test
-    fun `Part2 Exemple`() {
-        Assertions.assertEquals(5, Day01.part2(listOf(199, 200, 208, 210, 200, 207, 240, 269, 260, 263)))
+    fun `Part2 Example`() {
+        Assertions.assertEquals(45000, Day01.part2("""
+            1000
+            2000
+            3000
+            
+            4000
+            
+            5000
+            6000
+            
+            7000
+            8000
+            9000
+            
+            10000
+        """.trimIndent()))
     }
 
     @Test
     fun `Part2 Solution`() {
-        val i = input.map { it.toInt() }
-        Assertions.assertEquals(1538, Day01.part2(i))
+        Assertions.assertEquals(210406, Day01.part2(input))
     }
 }
